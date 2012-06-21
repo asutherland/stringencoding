@@ -731,6 +731,7 @@
       var bite = byte_pointer.get();
       if (bite === EOF_byte) {
         if (utf8_bytes_needed !== 0) {
+          utf8_bytes_needed = 0;
           return decoderError(fatal);
         }
         return EOF_code_point;
